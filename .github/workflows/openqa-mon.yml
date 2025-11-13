@@ -46,3 +46,16 @@ jobs:
         run: go mod download
       - name: Build openqa-review
         run: make openqa-revtui
+
+  tomllint:
+    name: "Tomllint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Tomllint'
+        uses: tsigouris007/action-tomllint@main
+        with:
+          tomllint_files: '_review/*.toml'
+          tomllint_comment: true
+          tomllint_ruleset: standard
