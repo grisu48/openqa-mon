@@ -122,6 +122,11 @@ func notifySend(text string) {
 // Println prints the current job in a 80 character wide line with optional colors enabled
 func PrintJob(job gopenqa.Job, useColors bool, width int) {
 	status := job.JobState()
+	if job.State == "running" {
+		if pct, ok := job.Progress(); ok {
+			status = fmt.Sprintf("running %d%%", pct)
+		}
+	}
 	if useColors {
 		if job.State == "running" {
 			fmt.Print(ANSI_BLUE)
