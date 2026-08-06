@@ -569,6 +569,11 @@ func (tui *TUI) formatJobLine(job gopenqa.Job, width int) string {
 	if state != "scheduled" && timestamp.Unix() > 0 {
 		tStr = timestamp.Format("2006-01-02-15:04:05")
 	}
+	if state == "running" {
+		if pct, ok := job.Progress(); ok {
+			state = fmt.Sprintf("running %d%%", pct)
+		}
+	}
 	// For failed jobs check if they are reviewed
 	if state == "failed" || state == "incomplete" || state == "parallel_failed" {
 		if reviewed, found := model.reviewed[job.ID]; found && reviewed {
