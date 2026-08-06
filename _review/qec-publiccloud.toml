@@ -22,35 +22,28 @@ GroupBy = "groups" # Group by defined groups ("none" or "groups")
 DefaultParams = { distri = "sle" } # Set of default parameters
 RequestJobLimit = 100 # Query up to 100 jobs per http request
 
-## Maintenance updates #########################################################
-
+## Latest images ###############################################################
 
 [[Groups]]
-Name = "SLES 16 Public Cloud Staging"
-Params = { groupid = "684" }
+Name = "PublicCloud Latest - Azure"
+Params = { groupid = "219" }
 MaxLifetime = 86400
 [[Groups]]
-Name = "SLES 16 Public Cloud Product Increments"
-Params = { groupid = "685" }
+Name = "PublicCloud Latest - EC2"
+Params = { groupid = "274" }
+MaxLifetime = 86400
+[[Groups]]
+Name = "PublicCloud Latest - GCE"
+Params = { groupid = "275" }
 MaxLifetime = 86400
 
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 15-SP7"
-Params = { groupid = "427", build = "%yesterday%-1", version = "15-SP7" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 15-SP6"
-Params = { groupid = "427", build = "%yesterday%-1", version = "15-SP6" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 15-SP5"
-Params = { groupid = "427", build = "%yesterday%-1", version = "15-SP5" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 15-SP4"
-Params = { groupid = "427", build = "%yesterday%-1", version = "15-SP4" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 12-SP5"
-Params = { groupid = "427", build = "%yesterday%-1", version = "12-SP5" }
+## Maintenance images ##########################################################
 
-# Maintenance images
+[[Groups]]
+Name = "PublicCloud Application"
+Params = { groupid = "688" }
+MaxLifetime = 86400
+
 [[Groups]]
 Name = "PublicCloud Mainteanance Images - Azure"
 Params = { groupid = "463" }
@@ -63,30 +56,16 @@ MaxLifetime = 86400
 Name = "PublicCloud Mainteanance Images - GCE"
 Params = { groupid = "465" }
 MaxLifetime = 86400
-
-# SLE-Micro
 [[Groups]]
-Name = "PublicCloud SLEM 6.0 Product Increments"
-Params = { groupid = "613" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 5.5"
-Params = { groupid = "532", build = "%yesterday%-1", version = "5.5" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 5.4"
-Params = { groupid = "532", build = "%yesterday%-1", version = "5.4" }
-[[Groups]]
-Name = "PublicCloud Maintenance Updates 5.3"
-Params = { groupid = "532", build = "%yesterday%-1", version = "5.3" }
-[[Groups]]
-Name = "SLEM Product Increments"
-Params = { groupid = "613" }
+Name = "PublicCloud Mainteanance Images - SAP"
+Params = { groupid = "640" }
 MaxLifetime = 86400
 
-
 [[Groups]]
-Name = "Public Cloud Single Incidents"
-Params = { groupid = "430" }
+Name = "LTP Stable"
+Params = { groupid = "659" }
 MaxLifetime = 86400
+
 
 # Create openQA helper instance disk image
 
