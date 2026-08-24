@@ -71,11 +71,6 @@ Name = "SLE Micro Container Maintenance Updates 5.3"
 Params = { groupid = "420", build = "%yesterday%-1", version = "5.3" }
 MaxLifetime = 86400
 
-[[Groups]]
-Name = "SLE Micro Container Maintenance Updates 5.2"
-Params = { groupid = "420", build = "%yesterday%-1", version = "5.2" }
-MaxLifetime = 86400
-
 ## Single Incidents
 
 [[Groups]]
